@@ -1,8 +1,9 @@
 import { GoLocation } from "react-icons/go";
 import { PiCurrencyCircleDollarDuotone } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Job = ({job}) => {
-  const {logo,job_title,company_name,remote_or_onsite,location,job_description,job_responsibility,educational_requirements,experiences,contact_information,phone,email,address,job_type,salary} = job
+  const {logo,job_title,company_name,remote_or_onsite,location,job_description,job_responsibility,educational_requirements,experiences,contact_information,phone,email,address,job_type,salary,id} = job
   return (
     <div className="card card-compact bg-base-100 shadow-xl">
   <figure><img src={logo}alt="Shoes" /></figure>
@@ -19,7 +20,9 @@ const Job = ({job}) => {
       </div>
     </div>
     <div className="card-actions ">
+      <Link to={`/job/${id}`}>
       <button className="btn btn-primary">View Details</button>
+      </Link>
     </div>
   </div>
 </div>
